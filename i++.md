@@ -34,6 +34,7 @@ static class CountRunnable implements Runnable {
 上面的例子我们期望的结果应该是 1000000，但运行 N 遍，你会发现总是不为 1000000，至少你现在知道了 i++ 操作它不是线程安全的了。
 
 下面是JMM模型中对共享变量的读写原理
+![JMM](https://github.com/toheng/JavaSatck/blob/master/images/jmm.jpg)
 
 **每个线程都有自己的工作内存，每个线程都需要对共享变量操作时，必须要先将共享变量从主内存中加载到自己的工作内存，等到完成共享变量的操作时，再保存到主内存中。**
 
